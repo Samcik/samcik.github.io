@@ -1,6 +1,3 @@
-<?php
-    require_once 'class.phpmailer.php';
-?>
 <!doctype html>
 
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -63,9 +60,7 @@
 
                 <div class="menu">
 
-                    <a href="o-nas.html" class="menu-pos">O <b>NAS</b></a>
-
-                    <a href="galeria.php" class="menu-pos">G<b>ALERIA</b></a>
+                    <a href="index.html" class="menu-pos">O <b>NAS</b></a>
 
                     <a href="oferta.php" class="menu-pos">O<b>FERTA</b></a>
 
@@ -86,44 +81,12 @@
             <div class='main' style="margin-bottom: 20px;">
 
                 <h3>Napisz do nas</h3>
-                <form style='float: left; width: 70%' method='POST'>
-
-                    <p>Skorzystaj z naszego formularza kontaktowego i napisz do nas! Podaj swój
-
-                        adres email - musimy przecież wiedzieć komu odpisać, a następnie wpisz treść wiadomości. 
-
-                        <br/><b>Nie zapomnij zaznaczyć kratki!</b>
-
-                    </p>
+                <div style='float: left; width: 70%'>
                     
-                    <?php
-                    if(isset($_POST['submit'])){
-                        $mail = new PHPMailer;
-                        $mail->From = $_POST['email'];
-                        $mail->addAddress('bandola_1@wp.pl');
-                        $mail->Subject = 'Wiadomość ze strony Świerkowego Rancho';
-                        $mail->Body = $_POST['text'];
-                        if(!$mail->send()) 
-                        {
-                            echo "<p>Nie udało się wysłać wiadomości, przepraszamy. Spróbuj skontaktować sie z nami telefonicznie.</p>";
-                        } 
-                        else 
-                        {
-                            echo "<p>Udało się wysłać wiadomość</p>";
-                        }
-                    }
-                    ?>
-                    <input type='email' name='email' id='email' placeholder='Email' required/><br/>
-
-                    <textarea name='text' id='text' placeholder='Treść' required></textarea><br/>
-
-                    <div><span>Nie jestem botem</span><input type='checkbox' name='bot' required/></div>
-
-                    <input type='submit' name='submit' id='submit' value='wyślij'/><br/><br/>
                     <p>
-                        Nie musisz korzystać z formularza! Napisz do nas na <a href='mailto:bandola_1@wp.pl'>bandola_1@wp.pl</a>.
+                        Napisz do nas na <a href='mailto:bandola_1@wp.pl'>bandola_1@wp.pl</a>.
                     </p>
-                </form>
+                </div>
 
                 <div class='addition'>
 
